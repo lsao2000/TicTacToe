@@ -62,137 +62,27 @@ public class Main {
                     userColumn = input.nextInt();
                     if (Square[userRow-1][userColumn-1].equalsIgnoreCase("-")){
                         Square[userRow-1][userColumn-1] = "X";
-//                        if(Square[0][0].equalsIgnoreCase("X") && Square[0][1].equalsIgnoreCase("X") && Square[0][2].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        } if (Square[0][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        } if (Square[0][1].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        } if (Square[0][2].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        } if (Square[0][2].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        }if (Square[1][0].equalsIgnoreCase("X") && Square[0][0].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        }if (Square[1][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        }if (Square[2][0].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-//                            System.out.println("######################### The game is end ##########################");
-//                            System.out.println("You win 👏👏😀😀😁");
-//                            condition = false;
-//                        }
                         errorUser = false;
                     }else{
                     }
                 }
             }else{
                 Square[userRow-1][userColumn-1] = "X";
-                if(Square[0][0].equalsIgnoreCase("X") && Square[0][1].equalsIgnoreCase("X") && Square[0][2].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                } if (Square[0][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                } if (Square[0][1].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                } if (Square[0][2].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                } if (Square[0][2].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                }if (Square[1][0].equalsIgnoreCase("X") && Square[0][0].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                }if (Square[1][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                }if (Square[2][0].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                    System.out.println("######################### The game is end ##########################");
-                    System.out.println("You win 👏👏😀😀😁");
-                    condition = false;
-                }
             }
-
-            // The calculate the posibility of the user to wining in this game
 
             ComputerColumn = random.nextInt(3);
             ComputerRow = random.nextInt(3);
             if (Square[ComputerRow][ComputerColumn].equalsIgnoreCase("X") || Square[ComputerRow][ComputerColumn].equalsIgnoreCase("O")){
                 errorComputer = true;
                 while (errorComputer){
-                    ComputerColumn = random.nextInt(2)+1;
-                    ComputerRow = random.nextInt(2)+1;
-                    if (Square[ComputerRow][ComputerColumn].equalsIgnoreCase("-")){
+                    ComputerColumn = random.nextInt(3);
+                    ComputerRow = random.nextInt(3);
+                    System.out.println("row" + ComputerRow + "column" + ComputerColumn );
+                    if (Square[ComputerRow][ComputerColumn].equalsIgnoreCase("-")) {
                         errorComputer = false;
-                    }else {
-                        if(Square[0][0].equalsIgnoreCase("X") && Square[0][1].equalsIgnoreCase("X") && Square[0][2].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        } if (Square[0][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        } if (Square[0][1].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        } if (Square[0][2].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        } if (Square[0][2].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        }if (Square[1][0].equalsIgnoreCase("X") && Square[0][0].equalsIgnoreCase("X") && Square[2][0].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        }if (Square[1][0].equalsIgnoreCase("X") && Square[1][1].equalsIgnoreCase("X") && Square[1][2].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        }if (Square[2][0].equalsIgnoreCase("X") && Square[2][1].equalsIgnoreCase("X") && Square[2][2].equalsIgnoreCase("X")){
-                            System.out.println("######################### The game is end ##########################");
-                            System.out.println("You win 👏👏😀😀😁");
-                            errorComputer = false;
-                            condition = false;
-                        }
                     }
                 }
             }else {
-
             }
             Square[ComputerRow][ComputerColumn] = "O";
             if(Square[0][0].equalsIgnoreCase("O") && Square[0][1].equalsIgnoreCase("O") && Square[0][2].equalsIgnoreCase("O")){
